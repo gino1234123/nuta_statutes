@@ -9,15 +9,12 @@
 #set text(
   font: (
   (name: "Times New Roman", covers: "latin-in-cjk"),
-  "思源宋體"),
+  "TW-Kai"),
   size: 12pt,
   lang: "zh",
   region: "TW"
 )
 
-#set par(
-  justify: true,
-)
 
 #let chapter-counter = counter("chapter")
 #let article-counter = counter("article")
