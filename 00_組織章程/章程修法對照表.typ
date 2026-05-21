@@ -9,7 +9,7 @@
 #set text(
   font: (
   (name: "Times New Roman", covers: "latin-in-cjk"),
-  "TW-Kai"),
+  "Noto Serif TC"),
   size: 12pt,
   lang: "zh",
   region: "TW"
@@ -68,14 +68,33 @@
   ]
 }
 
+// 章
+#show heading.where(level: 2): it => {
+  context {
+    let n = chapter-counter.get().first() + 1
+
+    chapter-counter.step()
+    
+    v(2em)
+
+    align(center)[
+      #text(14pt, weight: "semibold")[
+        第#to-cjk(n)章　#it.body
+      ]
+    ]
+
+  }
+}
+
 // 條（建議使用 #article[...]，可同條換行/分段）
 #let article(body) = {
   context {
     let n = article-counter.get().first() + 1
     article-counter.step()
+    v(1.5em)
     block[
-      #text[第#to-cjk(n)條]
-      #par(hanging-indent: 1em, first-line-indent: 1em)[#body]
+      #text(weight: "bold")[第#to-cjk(n)條]
+      #par(leading: 1.2em, justify: true, hanging-indent: 1em, first-line-indent: 1em)[#body]
     ]
   }
 }

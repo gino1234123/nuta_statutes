@@ -9,7 +9,7 @@
 #set text(
   font: (
   (name: "Times New Roman", covers: "latin-in-cjk"),
-  "TW-Kai"),
+  "Noto Serif TC"),
   size: 12pt,
   lang: "zh",
   region: "TW"
@@ -78,7 +78,7 @@
     v(2em)
 
     align(center)[
-      #text(14pt, weight: "bold")[
+      #text(14pt, weight: "semibold")[
         第#to-cjk(n)章　#it.body
       ]
     ]
@@ -93,8 +93,8 @@
     article-counter.step()
     v(1.5em)
     block[
-      #text[第#to-cjk(n)條]
-      #par(hanging-indent: 1em, first-line-indent: 1em)[#body]
+      #text(weight: "bold")[第#to-cjk(n)條]
+      #par(leading: 1.2em, justify: true, hanging-indent: 1em, first-line-indent: 1em)[#body]
     ]
   }
 }
