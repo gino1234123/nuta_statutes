@@ -94,7 +94,7 @@
     v(1.5em)
     block[
       #text(weight: "bold")[第#to-cjk(n)條]
-      #par(leading: 1.2em, justify: true, hanging-indent: 1em, first-line-indent: 1em)[#body]
+      #par(leading: 1.2em, hanging-indent: 1em, first-line-indent: 1em)[#body]
     ]
   }
 }
