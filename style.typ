@@ -58,6 +58,8 @@
     size: 12pt,
     lang: "zh",
     region: "TW",
+    top-edge: "ascender",
+    bottom-edge: "descender"
   )
 
   // 文件標題
@@ -96,7 +98,17 @@
     v(1.5em)
     block[
       #text(weight: "bold")[第#to-cjk(n)條]
-      #par(leading: 1.2em, hanging-indent: 1em, first-line-indent: 1em)[#body]
+      #pad(left: 1em)[#body]
     ]
   }
+}
+
+#let para(body) = {
+  par(
+    leading: 0.7em, spacing: 1em
+  )[#body]
+}
+
+#let subpara(body) = {
+  par(leading: 0.7em, spacing: 1em, hanging-indent: 2em)[#body]
 }
