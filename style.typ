@@ -105,10 +105,16 @@
 
 #let para(body) = {
   par(
-    leading: 0.7em, spacing: 1em
+    leading: 0.7em, spacing: 1.2em
   )[#body]
 }
 
 #let subpara(body) = {
-  par(leading: 0.7em, spacing: 1em, hanging-indent: 2em)[#body]
+  par(leading: 0.7em, spacing: 1.2em, hanging-indent: 2em)[#body]
+}
+
+#let item(body) = {
+  pad(left: 0.5em)[
+    #par(leading: 0.7em, spacing: 1.2em, hanging-indent: 2em)[#body]
+  ]
 }
