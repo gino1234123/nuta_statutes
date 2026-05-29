@@ -1,4 +1,5 @@
 #let chapter-counter = counter("chapter")
+#let section-counter = counter("section")
 #let article-counter = counter("article")
 
 // 阿拉伯數字轉中文小寫（1..9999）
@@ -77,12 +78,28 @@
       let n = chapter-counter.get().first() + 1
 
       chapter-counter.step()
+
+      section-counter.update(0)
       v(2em)
 
       align(center)[
         #text(14pt, weight: "semibold")[
           第#to-cjk(n)章　#it.body
         ]
+      ]
+    }
+  }
+
+  // 節
+  show heading.where(level: 3): it => {
+    context {
+      let sec_n = section-counter.get().first() + 1
+      section-counter.step()
+
+      align(center)[
+        #text(14pt, weight: "semibold")[
+          第#to-cjk(sec_n)節　#it.body
+          ]
       ]
     }
   }
