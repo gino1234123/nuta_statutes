@@ -1,4 +1,4 @@
-#import "../style.typ": statute-style, article, para, subpara
+#import "../style.typ": *
 #show: statute-style
 
 = 國立臺灣藝術大學學生會法規標準法
@@ -28,9 +28,9 @@
 
 #article()[
   #para[下列事項應以法律定之：]
-  #subpara[一、組織章程或法律有明文規定，應以法律定之者。]
-  #subpara[二、關於會員之權利、義務者。]
-  #subpara[三、其他重要事項之應以法律定之者。]
+  #subpara[組織章程或法律有明文規定，應以法律定之者。]
+  #subpara[關於會員之權利、義務者。]
+  #subpara[其他重要事項之應以法律定之者。]
 ]
 
 #article()[

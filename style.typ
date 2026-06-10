@@ -2,6 +2,8 @@
 #let section-counter = counter("section")
 #let article-counter = counter("article")
 
+#let subpara-counter = counter("subpara")
+
 // 阿拉伯數字轉中文小寫（1..9999）
 #let to-cjk(n) = {
   let d = ("零", "一", "二", "三", "四", "五", "六", "七", "八", "九")
@@ -112,6 +114,7 @@
   context {
     let n = article-counter.get().first() + 1
     article-counter.step()
+    subpara-counter.update(0)
     v(1.5em)
     block[
       #text(weight: "bold")[第#to-cjk(n)條]
@@ -127,7 +130,11 @@
 }
 
 #let subpara(body) = {
-  par(leading: 0.7em, spacing: 1.2em, hanging-indent: 2em)[#body]
+  context {
+    let x = subpara-counter.get().first() + 1
+    subpara-counter.step()
+    par(leading: 0.7em, spacing: 1.2em, hanging-indent: 2em)[#to-cjk(x)、#body]
+  }
 }
 
 #let item(body) = {
