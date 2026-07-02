@@ -12,11 +12,11 @@ if (-not (Get-Command typst -ErrorAction SilentlyContinue)) {
 
 $rootPath = (Resolve-Path $Root).Path
 $folders = Get-ChildItem -LiteralPath $rootPath -Directory |
-    Where-Object { $_.Name -match '^0[0-9]_' } |
+    Where-Object { $_.Name -ne 'scripts' } |
     Sort-Object Name
 
 if (-not $folders) {
-    Write-Warning "No folders matching the 00_ to 09_ naming pattern were found under: $rootPath"
+    Write-Warning "No folders (excluding 'scripts') were found under: $rootPath"
     exit 0
 }
 
