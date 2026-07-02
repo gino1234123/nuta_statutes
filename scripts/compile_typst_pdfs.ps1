@@ -11,8 +11,12 @@ if (-not (Get-Command typst -ErrorAction SilentlyContinue)) {
 }
 
 $rootPath = (Resolve-Path $Root).Path
+
+$outputDir = Join-Path $rootPath "complied_pdf"
+New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+
 $folders = Get-ChildItem -LiteralPath $rootPath -Directory |
-    Where-Object { $_.Name -ne 'scripts' } |
+    Where-Object { $_.Name -ne 'scripts' -and $_.Name -ne 'complied_pdf' } |
     Sort-Object Name
 
 if (-not $folders) {
@@ -32,7 +36,7 @@ if (-not $typFiles) {
 $failed = @()
 
 foreach ($typ in $typFiles) {
-    $pdf = [System.IO.Path]::ChangeExtension($typ.FullName, ".pdf")
+    $pdf = Join-Path $outputDir "$([System.IO.Path]::GetFileNameWithoutExtension($typ.FullName)).pdf"
 
     if ($Clean -and (Test-Path -LiteralPath $pdf)) {
         Remove-Item -LiteralPath $pdf
