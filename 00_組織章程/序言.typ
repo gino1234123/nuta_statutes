@@ -1,9 +1,9 @@
 #set text(
     font: (
       (name: "Times New Roman", covers: "latin-in-cjk"),
-      "Noto Serif TC",
+      "Noto Serif CJK TC",
     ),
-    size: 12pt,
+    size: 14pt,
     lang: "zh",
     region: "TW",
     top-edge: "ascender",
@@ -11,7 +11,7 @@
   )
 
 
-#text(14pt, font: "TW-Kai")[
+#text()[
 我們，臺藝大學生會第二十一屆成員，在歷經了前二十年各位先進前輩的經營，以及最近數年的風風雨雨，\
 為了確保本會的運作長久，於近年本校較為薄弱的學生自治風氣下，能夠有一個順暢轉動的制度，\
 我們在本屆推動會內制度改革，會長領導的行政中心，與由xx名議員組成的學生議會，一同合作達成。
@@ -25,18 +25,18 @@
 也期待這套制度能夠被改良、被修補，更甚於被推翻，\
 只要是為了學生會的最大目標—「增進學生權益」。]
 #v(1.5em)
-#align(center)[#text(14pt, font: "TW-Kai")[特此宣言\
+#align(center)[#text()[特此宣言\
 國立臺灣藝術大學學生會 第二十一屆成員]]
 #v(2em)
 #grid(
   columns: (1fr, 1fr, 1fr, 1fr),
   align: center,
-  [#text(14pt, font: "TW-Kai")[會長]],[#text(14pt, font: "TW-Kai")[副會長]],[#text(14pt, font: "TW-Kai")[議長]],[#text(14pt, font: "TW-Kai")[副議長]],
+  [#text()[會長]],[#text()[副會長]],[#text()[議長]],[#text()[副議長]],
 )
 #pagebreak()
 #grid(
   columns: (1fr, 1fr),
   align: center,
-  [#text(14pt, font: "TW-Kai")[行政中心成員]],[#text(14pt, font: "TW-Kai")[議員]]
+  [#text()[行政中心成員]],[#text()[議員]]
 )
 #pagebreak()
