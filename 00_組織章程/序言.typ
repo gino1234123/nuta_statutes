@@ -1,6 +1,6 @@
 #set text(
     font: (
-      (name: "Times New Roman", covers: "latin-in-cjk"),
+      (name: "Liberation Serif", covers: "latin-in-cjk"),
       "Noto Serif CJK TC",
     ),
     size: 14pt,
