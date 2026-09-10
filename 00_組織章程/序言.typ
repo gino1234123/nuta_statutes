@@ -1,7 +1,11 @@
 #set text(
     font: (
+      // for linux system
       (name: "Liberation Serif", covers: "latin-in-cjk"),
       "Noto Serif CJK TC",
+      // for windows system
+      (name: "Times New Roman", covers: "latin-in-cjk"),
+      "Noto Serif TC",
     ),
     size: 14pt,
     lang: "zh",
