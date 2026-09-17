@@ -1,4 +1,4 @@
-#import "../style.typ": *
+#import "../../style.typ": *
 #show: statute-style
 
 = 國立臺灣藝術大學學生會會費收取退還條例
