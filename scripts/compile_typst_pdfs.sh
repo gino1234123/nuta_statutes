@@ -61,6 +61,7 @@ mapfile -d '' folders < <(
   find "$root" -mindepth 1 -maxdepth 1 -type d \
     ! -name scripts \
     ! -name complied_pdf \
+    ! -name 待處理 \
     -print0 | sort -z
 )
 
@@ -71,7 +72,7 @@ fi
 
 typ_files=()
 for folder in "${folders[@]}"; do
-  if [[ "$recursive" == true ]]; then
+  if [[ "$recursive" == true || "$(basename -- "$folder")" == "條例" ]]; then
     while IFS= read -r -d '' typ_file; do
       typ_files+=("$typ_file")
     done < <(find "$folder" -type f -name '*.typ' -print0 | sort -z)
