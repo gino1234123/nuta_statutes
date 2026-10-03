@@ -2,3 +2,4 @@
 /report.md
 .agents/
 tmp/
+scripts/__pycache__
